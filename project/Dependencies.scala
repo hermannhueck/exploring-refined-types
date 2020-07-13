@@ -2,25 +2,25 @@ import sbt._
 
 object Dependencies {
 
-  lazy val collectionCompatVersion    = "2.1.4"
+  lazy val collectionCompatVersion    = "2.1.6"
   lazy val shapelessVersion           = "2.3.3"
   lazy val catsVersion                = "2.1.1"
   lazy val catsEffectVersion          = "2.1.1"
-  lazy val fs2Version                 = "2.2.2"
+  lazy val fs2Version                 = "2.4.2"
   lazy val monixVersion               = "3.1.0"
   lazy val zioVersion                 = "1.0.0-RC17"
-  lazy val scalaTestVersion           = "3.1.1"
+  lazy val scalaTestVersion           = "3.2.0"
   lazy val scalaMockVersion           = "4.4.0"
   lazy val scalaCheckVersion          = "1.14.3"
   lazy val scalaCheckShapelessVersion = "1.2.5"
   lazy val scalaCheckDatetimeVersion  = "0.3.2"
   lazy val seleniumVersion            = "3.141.59"
-  lazy val munitVersion               = "0.5.2"
+  lazy val munitVersion               = "0.7.9"
   lazy val minitestVersion            = "2.7.0"
   lazy val utestVersion               = "0.7.4"
   lazy val fansiVersion               = "0.2.9"
   lazy val pprintVersion              = "0.5.9"
-  lazy val refinedVersion             = "0.9.13"
+  lazy val refinedVersion             = "0.9.14"
   lazy val singletonOpsVersion        = "0.4.3"
 
   lazy val collectionCompat = "org.scala-lang.modules" %% "scala-collection-compat" % collectionCompatVersion
@@ -37,7 +37,7 @@ object Dependencies {
   lazy val scalaTest        = "org.scalatest"          %% "scalatest"               % scalaTestVersion
   lazy val scalaTestApp     = "org.scalatest"          %% "scalatest-app"           % scalaTestVersion
   // lazy val scalaTestPlusCheck  = "org.scalatestplus"          %% "scalatestplus-scalacheck"    % "3.1.0.0-RC2"
-  lazy val scalaTestPlusCheck = "org.scalatestplus" %% "scalacheck-1-14" % "3.1.1.1"
+  lazy val scalaTestPlusCheck = "org.scalatestplus" %% "scalacheck-1-14" % "3.2.0.0"
   lazy val scalaMock          = "org.scalamock"     %% "scalamock"       % scalaMockVersion
   lazy val scalaCheck         = "org.scalacheck"    %% "scalacheck"      % scalaCheckVersion
   lazy val scalaCheckShapeless =
