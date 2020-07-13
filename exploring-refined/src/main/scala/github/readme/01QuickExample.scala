@@ -67,7 +67,7 @@ object QuickExample extends _root_.util.App {
   // b: Int Refined Greater[Int(4)] = 10
 
   // An unsound ascription leads to a compile error:
-  println
+  println()
   compileErrors("val c: Int Refined Greater[W.`6`.T] = a") pipe println
   // <console>:23: error: type mismatch (invalid inference):
   //  Greater[Int(5)] does not imply

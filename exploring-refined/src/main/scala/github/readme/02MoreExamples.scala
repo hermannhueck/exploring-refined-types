@@ -23,7 +23,7 @@ object MoreExamples extends _root_.util.App {
     .pipe(println)
   // res2: String Refined NonEmpty = Hello
 
-  println
+  println()
   compileErrors("""refineMV[NonEmpty]("")""") pipe println
   // error: Predicate isEmpty() did not fail.
   //             refineMV[NonEmpty]("")
@@ -33,7 +33,7 @@ object MoreExamples extends _root_.util.App {
 
   refineMV[ZeroToOne](0.8) pipe println
 
-  println
+  println()
   compileErrors("""refineMV[ZeroToOne](1.8)""") pipe println
   // error: Right predicate of (!(1.8 < 0.0) && !(1.8 > 1.0)) failed: Predicate (1.8 > 1.0) did not fail.
   //        refineMV[ZeroToOne](1.8)
@@ -42,7 +42,7 @@ object MoreExamples extends _root_.util.App {
   refineMV[AnyOf[Digit :: Letter :: Whitespace :: HNil]]('F') pipe println
   // res3: Char Refined AnyOf[Digit :: Letter :: Whitespace :: HNil] = F
 
-  println
+  println()
   compileErrors("""refineMV[MatchesRegex[W.`"[0-9]+"`.T]]("123.")""") pipe println
   // error: Predicate failed: "123.".matches("[0-9]+").
   //               refineMV[MatchesRegex[W.`"[0-9]+"`.T]]("123.")
@@ -56,7 +56,7 @@ object MoreExamples extends _root_.util.App {
   // d2: Char Refined Digit = 3
   d2 tap println
 
-  println
+  println()
   compileErrors("""val d3: Char Refined Letter = d1""") pipe println
   // error: type mismatch (invalid inference):
   //  Equal[Char('3')] does not imply
@@ -68,7 +68,7 @@ object MoreExamples extends _root_.util.App {
   // r1: String Refined Regex = (a|b)
   r1 pipe println
 
-  println
+  println()
   compileErrors("""val r2: String Refined Regex = "(a|b"""") pipe println
   // error: Regex predicate failed: Unclosed group near index 4
   // (a|b
@@ -84,7 +84,7 @@ object MoreExamples extends _root_.util.App {
   // u2: String Refined Url = "https://example.com"
   u2 pipe println
 
-  println
+  println()
   compileErrors("""val u3: String Refined Url = "htp://example.com"""") pipe println
   // error: Url predicate failed: unknown protocol: htp
   //  val u3: String Refined Url = "htp://example.com"
