@@ -3,30 +3,22 @@ import ScalacOptions._
 
 val projectName        = "exploring-refined-types"
 val projectDescription = "Exploring type refinements"
-val projectVersion     = "0.1.0"
+val projectVersion     = "0.2.0"
 
-val scala212               = "2.12.11"
-val scala213               = "2.13.3"
-val supportedScalaVersions = List(scala213)
+val scala213 = "2.13.11"
 
 inThisBuild(
   Seq(
     version := projectVersion,
     scalaVersion := scala213,
-    crossScalaVersions := supportedScalaVersions,
     publish / skip := true,
     libraryDependencies ++= Seq(
       munit,
-      collectionCompat,
-      silencerLib,
-      silencerPlugin,
       kindProjectorPlugin,
       betterMonadicForPlugin
     ) ++ Seq(
       scalaTest,
-      scalaCheck,
-      scalaTestPlusCheck,
-      scalaCheckShapeless
+      scalaCheck
     ).map(_ % Test),
     Test / parallelExecution := false,
     // S = Small Stack Traces, D = print Duration
@@ -37,7 +29,7 @@ inThisBuild(
     initialCommands :=
       s"""|
           |import scala.util.chaining._
-          |println
+          |println()
           |""".stripMargin // initialize REPL
   )
 )
@@ -56,7 +48,7 @@ lazy val `exploring-refined` = (project in file("exploring-refined"))
     name := "exploring-refined",
     description := "Exploring the 'Refined' library",
     scalacOptions ++= scalacOptionsFor(scalaVersion.value),
-    console / scalacOptions := removeScalacOptionXlintUnusedForConsoleFrom(scalacOptions.value),
+    // console / scalacOptions := removeScalacOptionXlintUnusedForConsoleFrom(scalacOptions.value),
     libraryDependencies ++= Seq(
       shapeless,
       fs2Io,
@@ -74,7 +66,7 @@ lazy val `exploring-singleton-ops` = (project in file("exploring-singleton-ops")
     name := "exploring-singleton-ops", // singleton-ops only works with the typelevel scala compiler.
     description := "Exploring the 'singleton-ops' library",
     scalacOptions ++= scalacOptionsFor(scalaVersion.value),
-    console / scalacOptions := removeScalacOptionXlintUnusedForConsoleFrom(scalacOptions.value),
+    // console / scalacOptions := removeScalacOptionXlintUnusedForConsoleFrom(scalacOptions.value),
     libraryDependencies ++= Seq(
       shapeless,
       fs2Io
